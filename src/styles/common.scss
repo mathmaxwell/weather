@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	font-style: none;
+	list-style: none;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: 0.3s;
+}
+.container {
+	width: 100%;
+	max-width: 1140px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+@mixin text($family, $size, $weight) {
+	font-family: $family;
+	font-size: $size;
+	font-weight: $weight;
+}
+.sun {
+	color: #ffffff;
+}
+.sun-img {
+	background-image: url('../assets/sun.jpg');
+}
+.moon {
+	color: #ffffff;
+}
+.moon-img {
+	background-image: url('../assets/moon.jpg');
+}
+.rain {
+	color: #d1ecff;
+}
+.rain-img {
+	background-image: url('../assets/rain.jpg');
+}

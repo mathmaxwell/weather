@@ -1,0 +1,144 @@
+@import './fonts';
+@import 'common';
+
+.component {
+	width: 100%;
+	height: 100vh;
+	padding-top: 30px;
+	padding-bottom: 80px;
+	padding-left: 30px;
+	position: relative;
+	z-index: 2;
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-color: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(6px);
+		z-index: -1;
+	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: start;
+		height: 100%;
+		.choose {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 15px;
+			img {
+				width: 50px;
+				height: 44px;
+				background-color: inherit;
+				cursor: pointer;
+				transform: scale(1);
+				&:active {
+					transform: scale(0.8);
+				}
+			}
+		}
+		.bottom {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			.info {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 10px;
+				p {
+					@include text(Comfortaa, 100px, 800);
+				}
+				.city {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					gap: 5px;
+					p {
+						@include text(Comfortaa, 50px, 700);
+					}
+					.time {
+						p {
+							@include text(Comfortaa, 18px, 300);
+						}
+					}
+				}
+				img {
+					width: 50px;
+					height: 50px;
+				}
+			}
+			.openSearch {
+				background-color: inherit;
+				@include text(Comfortaa, 50px, 800);
+			}
+		}
+	}
+	.data {
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 100%;
+		width: 40%;
+		background-color: rgba($color: #000000, $alpha: 0.2);
+		padding: 50px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		form {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid white;
+			padding: 5px 15px;
+			width: max-content;
+			input {
+				padding: 10px;
+				background-color: inherit;
+				@include text(Comfortaa, 25px, 700);
+				color: white;
+			}
+			button {
+				background-color: inherit;
+				img {
+					width: 30px;
+					height: 30px;
+					background-color: inherit;
+					&:active {
+						scale: 0.8;
+					}
+				}
+			}
+		}
+		h3 {
+			@include text(Comfortaa, 22px, 500);
+		}
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			li {
+				@include text(Comfortaa, 20px, 400);
+			}
+		}
+		button {
+			position: absolute;
+			width: 70%;
+			padding: 10px;
+			bottom: 130px;
+			@include text(Comfortaa, 20px, 400);
+		}
+	}
+	.hidden {
+		display: none;
+	}
+}
+.pure {
+	&::before {
+		background-color: rgba(255, 255, 255, 0);
+		backdrop-filter: blur(0);
+	}
+}
